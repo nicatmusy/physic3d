@@ -195,11 +195,10 @@ _inline int Sys_Start( void )
 int main( int argc, char **argv )
 {
 	#if (!defined(__HAIKU__) && !defined(_WIN32) && !defined(__SAILFISH__))
-	if( !getuid() )
-	{
-		printf( "You shouldn't run Xash3D as root!\n" );
-		return 1;
-	}
+	  if( !getuid() )
+	  {
+		  printf( "WARNING : You shouldn't run Xash3D as root!\n" );
+	  }
 	#endif
 
 	szArgc = argc;
